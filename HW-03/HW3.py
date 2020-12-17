@@ -30,8 +30,8 @@ def fourier (T ,  x_t):
     b_numpy = np.array(b)
     sum1 = a[0] / 2
     f, plots = plt.subplots(2,6)
-    f2, plott = plt.subplots(1,1)
-
+    f2, plott = plt.subplots(1,1)   
+    f2.suptitle(title)
     f.suptitle(title)
     color = ['red', 'blue', 'green', 'yellow', 'purple', 'violet', 'orange', 'cyan', 'white', 'brown' , 'pink']
     for k in range(0,12):
@@ -44,7 +44,7 @@ def fourier (T ,  x_t):
         plots[x][y].plot(t, sum1, color=color[k % len(color)])
         plots[x][y].set_title('k = {}'.format(k))
         # plt.plot(t, sum1)
-    plt.show()
+    # plt.show()
 
 n=np.arange(-3, 3, 0.001)
 t=np.arange(-3, 3, 0.001)
@@ -57,7 +57,7 @@ plt.xlabel('t')
 plt.ylabel('X')
 plt.legend()
 # plt.show()
-# fourier (6 ,  X)
+
 
 
 conditions_2=[ (t > -3) & (t < -2) , (t > -2) & (t <= -1) , (t > -1) & (t <= 1) , (t > 1) & (t <= 2) , (t > 2) & (t <= 3) ]
@@ -70,3 +70,5 @@ plt.ylabel('X-axis')
 plt.legend()
 # plt.show()
 fourier (6 ,  X2)
+fourier (6 ,  X)
+plt.show()
